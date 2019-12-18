@@ -1,6 +1,7 @@
 def boardOut(board)
 	full = true
 	for x in board 
+		print "       "
 		for y in x
 			print "#{y} "
 			if y == '-'
@@ -26,7 +27,7 @@ end
 def play(player, pSpots, board, winnables)
 	spot = ''
 	while spot != '-'
-		puts "#{player}, which row?"
+		puts "\n#{player}, which row?"
 		row = gets.chomp.to_i - 1
 		puts "Which column?"
 		col = gets.chomp.to_i - 1
@@ -68,7 +69,12 @@ p1Spots = []
 p2Spots = []
 playerWon = ""
 
-while true # Board is not empty
+puts "WELCOME TO TICK TACK TOE"
+puts "HERE IS YOUR BOARD:"
+puts
+boardOut(board)
+
+while true 
 	playerWon = play("Player 1", p1Spots, board, winnables) # 
 	if playerWon == "Player 1"
 		puts "Player 1 Wins!"
